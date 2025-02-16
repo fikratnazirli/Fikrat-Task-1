@@ -5,7 +5,7 @@ import {
   AccordionItemContent,
   AccordionItemTrigger,
   AccordionRoot,
-} from "components/ui/accordion"
+}
 const App = () => {
   return (
     <HStack>
