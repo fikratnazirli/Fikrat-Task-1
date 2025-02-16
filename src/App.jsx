@@ -1,5 +1,11 @@
 import { Tabs, HStack } from "@chakra-ui/react"
 import { LuFolder, LuSquareCheck, LuUser } from "react-icons/lu"
+import {
+  AccordionItem,
+  AccordionItemContent,
+  AccordionItemTrigger,
+  AccordionRoot,
+} from "./components/ui/accordion"
 const App = () => {
   return (
     <HStack>
@@ -24,6 +30,14 @@ const App = () => {
        11
       </Tabs.Content>
     </Tabs.Root>
+      <AccordionRoot collapsible defaultValue={["b"]}>
+      {items.map((item, index) => (
+        <AccordionItem key={index} value={item.value}>
+          <AccordionItemTrigger>{item.title}</AccordionItemTrigger>
+          <AccordionItemContent>{item.text}</AccordionItemContent>
+        </AccordionItem>
+      ))}
+    </AccordionRoot>
     </HStack>
   )
 }
